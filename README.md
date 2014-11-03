@@ -14,3 +14,12 @@ The above will cause clicks on the anchor tag to toggle a `theatre-target-active
 <a href="#" data-theatre-trigger="nav" data-theatre-active-class="active">Navigation</a>
 <nav data-theatre-target="nav" data-theatre-active-class="shown">...</nav>
 ```
+
+Multiple elements can be targeted and will toggle just as a single element would,
+
+```html
+<a href="#" data-theatre-trigger="nav" data-theatre-active-class="active">Navigation</a>
+<nav data-theatre-target="nav" data-theatre-active-class="shown">...</nav>
+<p>Page intro...</p>
+<nav class="utility" data-theatre-target="nav" data-theatre-active-class="utility--shown">...</nav>
+```
