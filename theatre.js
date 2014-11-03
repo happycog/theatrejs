@@ -8,8 +8,7 @@
   function handler(e){
     var trigger = $(e.target),
         key = trigger.data('theatre-trigger'),
-        activeTriggerClass = trigger.data('theatre-active-trigger-class') || 'theatre-active-trigger',
-        activeTargetClass = trigger.data('theatre-active-target-class') || 'theatre-active-target',
+        activeTriggerClass = trigger.data('theatre-active-class') || 'theatre-active-trigger',
         target = $('[data-theatre-target="' + key + '"]'),
         eventPrefix = 'theatre.' + key + '.';
 
@@ -18,8 +17,11 @@
 
     if (target.length && !beforeToggle.isDefaultPrevented()) {
       trigger.toggleClass(activeTriggerClass);
-      target.toggleClass(activeTargetClass);
-      target.trigger(eventPrefix + 'afterToggle');
+      target.each(function() {
+        var activeTargetClass = $(this).data('theatre-active-class') || 'theatre-active-target';
+        $(this).toggleClass(activeTargetClass);
+        $(this).trigger(eventPrefix + 'afterToggle');
+      });
     }
 
     e.preventDefault();
