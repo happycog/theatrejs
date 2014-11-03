@@ -15,7 +15,7 @@ The above will cause clicks on the anchor tag to toggle a `theatre-target-active
 <nav data-theatre-target="nav" data-theatre-active-class="shown">...</nav>
 ```
 
-Multiple elements can be targeted and will toggle just as a single element would,
+Trigger and target keys are somewhat unique, but not required to be unique. That means you can target multiple elements the same way you would a single element,
 
 ```html
 <a href="#" data-theatre-trigger="nav" data-theatre-active-class="active">Navigation</a>
