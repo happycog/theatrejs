@@ -65,6 +65,13 @@
     toggleTargetsFor(key);
   }
   
+  /**
+   * Change Handler
+   *
+   * When a select box changes and the triggers are on the options
+   * the selected option will have its targets shown. All
+   * unselected options will have their targets hidden.
+   */
   function changeHandler(e) {
     $(this).find('option').each(function(index) {
       var trigger = $(this),
@@ -83,6 +90,13 @@
     e.preventDefault();
   }
   
+  /**
+   * Toggle Targets
+   * 
+   * Given a key, go through all the matching targets and determine
+   * if all of the specified keys are active. If so, show the
+   * target, otherwise hide the target.
+   */
   function toggleTargetsFor(key) {
     $('[data-theatre-target~="' + key + '"]').each(function(index) {
       var target = $(this);
@@ -102,6 +116,12 @@
     });
   }
 
+  /**
+   * Events
+   *
+   * Add document event listeners for all the supported theatre
+   * element types.
+   */
   $(document).on('click', 'a[data-theatre-trigger], button[data-theatre-trigger]', clickHandler);
   $(document).on('change', 'select[data-theatre-trigger]', valHandler);
   $(document).on('change', 'select:has(option[data-theatre-trigger])', changeHandler);
