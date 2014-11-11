@@ -1,6 +1,8 @@
 theatre.js
 ====
 
+Demo: http://codepen.io/markhuot/full/ueCpc/
+
 A CSS-only method to hide / show elements on click. The onus is on the developer to set initial states and transition states. This allows you to conditionally show elements on small screens and toggle them on larger screens. To get up and running you simply need to tag your trigger and your target with data attributes. E.g.,
 
 ```html
