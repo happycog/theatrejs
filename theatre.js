@@ -1,9 +1,9 @@
 /**
-  *
-  * theatre.js 1.1.0 (https://github.com/happycog/theatrejs)
-  * By Happy Cog (http://happycog.com)
-  *
-  * */
+ *
+ * theatre.js 1.1.0 (https://github.com/happycog/theatrejs)
+ * By Happy Cog (http://happycog.com)
+ *
+ */
 (function($){
   
   /**
