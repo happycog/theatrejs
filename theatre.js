@@ -1,11 +1,24 @@
 /**
+ * Optional AMD dependency. If you don't have Require.js then we'll
+ * just assume jQuery exists and create a dummy function here.
+ */
+if (!define) {
+  function define(args) {
+    for (var key in args) {
+      if (typeof args[key] == 'function') {
+        args[key](jQuery);
+      }
+    }
+  }
+}
+
+/**
  *
- * theatre.js 1.1.0 (https://github.com/happycog/theatrejs)
+ * theatre.js 1.1.1 (https://github.com/happycog/theatrejs)
  * By Happy Cog (http://happycog.com)
  *
  */
-(function($){
-  
+define(['jquery', function($) {
   /**
    * Toggle Attribute
    * 
@@ -125,4 +138,5 @@
   $(document).on('click', 'a[data-theatre-trigger], button[data-theatre-trigger]', clickHandler);
   $(document).on('change', 'select[data-theatre-trigger]', valHandler);
   $(document).on('change', 'select:has(option[data-theatre-trigger])', changeHandler);
-})(jQuery);
+  return false;
+}]);
